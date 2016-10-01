@@ -1,3 +1,3 @@
 # player-corsi
 
-Thanks to puckalytics.com for data
+Thanks to https://puckalytics.com for NHL Real-time data
