@@ -1,6 +1,7 @@
-package com.github.jchartier;
+package com.github.jchartier.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -11,11 +12,33 @@ import org.springframework.data.elasticsearch.annotations.Document;
 @Document(indexName = "statistics", type = "corsi")
 public class PlayerCorsi {
 
+    @Getter
+    @AllArgsConstructor
+    public enum Fields {
+
+        TEAM("team"),
+        CF_PERCENTAGE("CF_Percentage");
+
+        String field;
+    }
+
     @Id
     private String id;
 
     @JsonProperty(value = "year")
     private Integer year;
+
+    @JsonProperty(value = "lastname")
+    private String lastName;
+
+    @JsonProperty(value = "firstname")
+    private String firstFame;
+
+    @JsonProperty(value = "team")
+    private String team;
+
+    @JsonProperty(value = "pos")
+    private String position;
 
     @JsonProperty(value = "GP")
     private Integer gp;
